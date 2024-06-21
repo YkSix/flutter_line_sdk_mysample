@@ -1,0 +1,36 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+android {
+    namespace = "com.linesdksample.flutter_line_sdk_mysample"
+    compileSdk = 33
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    defaultConfig {
+        applicationId = "com.linesdksample.flutter_line_sdk_mysample"
+
+        minSdk = 24
+        targetSdk = flutter.targetSdkVersion
+        versionCode = 1
+        versionName = "1.0"
+    }
+}
+
+flutter {
+    source = "../.."
+}
